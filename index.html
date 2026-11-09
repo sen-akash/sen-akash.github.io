@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akash Sen | PhD Candidate in Mathematics, IIT Hyderabad</title>
+<meta name="description" content="Akash Sen is a PhD candidate in Mathematics at IIT Hyderabad working on deep unrolled networks, inverse problems and sparse signal recovery. Publications, talks and teaching.">
+<meta name="author" content="Akash Sen">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Akash Sen | PhD Candidate in Mathematics, IIT Hyderabad">
+<meta property="og:description" content="Akash Sen is a PhD candidate in Mathematics at IIT Hyderabad working on deep unrolled networks, inverse problems and sparse signal recovery. Publications, talks and teaching.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Akash Sen",
+  "jobTitle": "PhD Candidate in Mathematics",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Indian Institute of Technology Hyderabad"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Indian Institute of Technology Hyderabad"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Visva-Bharati University"
+    }
+  ],
+  "knowsAbout": [
+    "Deep learning",
+    "Algorithm unrolling",
+    "Inverse problems",
+    "Sparse signal recovery",
+    "Optimization theory"
+  ]
+}</script>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Layout: a sticky left rail (identity + section index) beside one reading column; dates sit in the left margin of the column like marginalia in a manuscript. */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --fg: #151A22;
+    --muted: #566070;
+    --rule: #D8DDE5;
+    --accent: #0E5A6B;
+    --accent-soft: #E1EEF1;
+    --mark-bg: #FBF0B5;
+    --mark-fg: #4A3B00;
+    --font-display: 'Spectral', Georgia, 'Times New Roman', serif;
+    --font-body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1419;
+      --surface: #161C24;
+      --fg: #E7EAEF;
+      --muted: #9AA5B4;
+      --rule: #2A3340;
+      --accent: #6FC3D4;
+      --accent-soft: #17303A;
+      --mark-bg: #3B3410;
+      --mark-fg: #F3E39A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1419;
+    --surface: #161C24;
+    --fg: #E7EAEF;
+    --muted: #9AA5B4;
+    --rule: #2A3340;
+    --accent: #6FC3D4;
+    --accent-soft: #17303A;
+    --mark-bg: #3B3410;
+    --mark-fg: #F3E39A;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: auto; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: balance; margin: 0; line-height: 1.15; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  .shell {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: clamp(32px, 7vw, 96px);
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-block: 56px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  /* ---------- Rail ---------- */
+  .rail {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 32px);
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+  }
+  .monogram {
+    width: 88px; height: 88px;
+    display: grid; place-items: center;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: var(--font-display);
+    font-size: 34px;
+    letter-spacing: .02em;
+  }
+  .rail-name { font-family: var(--font-display); font-size: 22px; line-height: 1.2; }
+  .rail-role { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .nav { display: flex; flex-direction: column; gap: 2px; }
+  .nav a {
+    display: block;
+    padding: 5px 0 5px 14px;
+    border-left: 2px solid var(--rule);
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .nav a:hover { color: var(--fg); border-left-color: var(--muted); }
+  .nav a[aria-current="true"] { color: var(--fg); border-left-color: var(--accent); font-weight: 600; }
+  .theme-btn {
+    align-self: flex-start;
+    font: 500 12px var(--font-mono);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .theme-btn:hover { color: var(--fg); border-color: var(--muted); }
+
+  /* ---------- Main column ---------- */
+  main { min-width: 0; max-width: 720px; }
+  .hero { padding-bottom: 44px; }
+  .status {
+    display: inline-block;
+    font: 500 12px var(--font-mono);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background: var(--mark-bg);
+    color: var(--mark-fg);
+    padding: 5px 10px;
+    margin-bottom: 22px;
+  }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); font-weight: 400; letter-spacing: -.01em; }
+  .lede { font-size: 1.2rem; line-height: 1.55; margin-top: 20px; max-width: 34em; }
+  .link-row { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-size: 15px; }
+  .link-row a { font-weight: 600; }
+
+  section { padding-block: 40px; border-top: 1px solid var(--rule); scroll-margin-top: 16px; }
+  section > h2 { font-size: 1.9rem; margin-bottom: 24px; }
+  .label {
+    font: 500 12px var(--font-mono);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .prose { display: flex; flex-direction: column; gap: 16px; max-width: 36em; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .tags li {
+    font-size: 14px;
+    padding: 3px 11px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+
+  .threads { display: flex; flex-direction: column; gap: 28px; margin-top: 32px; }
+  .thread { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 24px; }
+  .thread .label { line-height: 2.1; }
+  .thread h3 { font-size: 1.25rem; margin-bottom: 6px; }
+  .thread p { max-width: 34em; }
+
+  /* margin-note entries: date | content */
+  .entry { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 24px; padding-block: 18px; }
+  .entry + .entry { border-top: 1px dashed var(--rule); }
+  .entry > .when { font: 400 13px/1.9 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .entry-list { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  .filters button {
+    font: 500 13px var(--font-body);
+    padding: 5px 13px;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    cursor: pointer;
+  }
+  .filters button:hover { color: var(--fg); border-color: var(--muted); }
+  .filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+  .pub-title { font-weight: 600; line-height: 1.4; }
+  .pub-authors, .pub-venue { color: var(--muted); font-size: 15px; margin-top: 2px; }
+  .pub-authors b { color: var(--fg); font-weight: 600; }
+  .pub-venue em { color: var(--fg); }
+  .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin-top: 8px; font-size: 14px; }
+  .pill {
+    font: 500 11px var(--font-mono);
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 2px 8px;
+  }
+  .pill.warn { background: var(--mark-bg); color: var(--mark-fg); }
+  .linkbtn {
+    font: inherit;
+    font-size: 14px;
+    color: var(--accent);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .linkbtn:hover { text-decoration-thickness: 2px; }
+
+  .item-title { font-weight: 600; }
+  .item-sub { color: var(--muted); font-size: 15px; }
+  .item-sub + .item-sub { margin-top: 2px; }
+
+  .contact-grid { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 14px 24px; align-items: baseline; margin: 0; }
+  .contact-grid dt { font: 400 13px var(--font-mono); color: var(--muted); }
+  .contact-grid dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+  footer {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    justify-content: space-between;
+    color: var(--muted);
+    font: 400 13px var(--font-mono);
+  }
+
+  /* ---------- Narrow screens ---------- */
+  @media (max-width: 820px) {
+    .shell { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 28px 32px; }
+    .rail { position: static; gap: 20px; }
+    .rail-id { display: flex; align-items: center; gap: 16px; }
+    .monogram { width: 64px; height: 64px; font-size: 24px; flex: none; }
+    .nav { flex-direction: row; flex-wrap: wrap; gap: 6px 18px; }
+    .nav a { border-left: 0; border-bottom: 2px solid var(--rule); padding: 3px 0; }
+    .nav a[aria-current="true"] { border-bottom-color: var(--accent); }
+    .entry, .thread, .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+    .contact-grid dd { margin-bottom: 12px; }
+    .entry > .when, .thread .label { line-height: 1.4; }
+  }
+</style>
+
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-id">
+      <div class="monogram" aria-hidden="true">AS</div>
+      <div>
+        <div class="rail-name">Akash Sen</div>
+        <div class="rail-role">PhD candidate, Mathematics, IIT Hyderabad</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Change colour theme">Theme: Auto</button>
+  </aside>
+
+  <main>
+    <header class="hero" id="top">
+      <p class="status">PhD year 5 · PMRF fellow</p>
+      <h1>Akash Sen</h1>
+      <p class="lede">I work on the mathematical foundations of deep learning. My thesis designs unrolled networks, neural architectures built from optimization algorithms, to solve sparse inverse problems.</p>
+      <div class="link-row">
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Email</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="prose">
+        <p>I am a PhD scholar in the Department of Mathematics at the Indian Institute of Technology Hyderabad, supervised by Prof. C. S. Sastry. My research is supported by the Prime Minister's Research Fellowship (PMRF).</p>
+        <p>My interests lie in the mathematical foundations of deep learning, algorithm unrolling, inverse problems and optimization theory. My doctoral work develops deep unrolled networks: interpretable neural architectures that I design, analyse theoretically and apply to sparse signal recovery in data-driven settings. I aim to connect optimization theory with modern deep learning for inverse problems and signal processing.</p>
+        <p>I have presented at ICASSP 2024 and 2025, SampTA 2025 and PReMI 2025. My work has appeared in IEEE Signal Processing Letters (2026), with further manuscripts under review at Neural Networks and Applied Soft Computing.</p>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p class="label">Interests</p>
+      <ul class="tags">
+        <li>Mathematical aspects of deep learning</li>
+        <li>Inverse problems</li>
+        <li>Algorithm unrolling</li>
+        <li>Optimization theory</li>
+        <li>Sparse signal recovery</li>
+      </ul>
+      <div class="threads">
+        <div class="thread">
+          <div class="label">Thesis</div>
+          <div>
+            <h3>Unrolled data-driven solvers for inverse problems</h3>
+            <p>I turn iterative optimization algorithms into trainable networks whose layers keep the structure of the original method. This keeps the networks interpretable and makes them open to theoretical analysis.</p>
+          </div>
+        </div>
+        <div class="thread">
+          <div class="label">Method</div>
+          <div>
+            <h3>Nonnegative least squares and sparse recovery</h3>
+            <p>Several of my papers unroll proximal gradient descent, gradient descent and thresholding schemes into learned networks for nonnegative least squares and nonnegative sparse signal recovery.</p>
+          </div>
+        </div>
+        <div class="thread">
+          <div class="label">Applications</div>
+          <div>
+            <h3>Tomography and impulsive noise</h3>
+            <p>I apply learned networks to electrical impedance tomography, together with S. Gulati and P. Jampana, and to sparse recovery under impulsive noise through LCP-Net.</p>
+          </div>
+        </div>
+        <div class="thread">
+          <div class="label">In preparation</div>
+          <div>
+            <h3>Convex and thresholding-based solvers</h3>
+            <p>Two manuscripts in preparation: a hard thresholding-driven basis pursuit algorithm with momentum under a nonnegativity constraint, and BGST, a convex solver for group sparse recovery with a box constraint.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="filters" role="group" aria-label="Filter publications by type">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="journal" aria-pressed="false">Journal</button>
+        <button type="button" data-filter="conference" aria-pressed="false">Conference</button>
+      </div>
+
+      <div id="pub-list">
+        <div class="entry" data-year-group>
+          <div class="when">2026</div>
+          <div class="entry-list">
+            <article class="pub" data-type="journal" data-status="published" data-key="sen2026deep" data-title="Deep Unrolled Networks for Nonnegative Least Squares Problem: Analysis and Application" data-venue="IEEE Signal Processing Letters" data-year="2026" data-pages="1--5" data-doi="10.1109/LSP.2026.3669434" data-authors="Sen, Akash and Sastry, C. S.">
+              <div class="pub-title">Deep Unrolled Networks for Nonnegative Least Squares Problem: Analysis and Application</div>
+              <div class="pub-authors"><b>Akash Sen</b>, C. S. Sastry</div>
+              <div class="pub-venue"><em>IEEE Signal Processing Letters</em>, 2026, pp. 1–5</div>
+              <div class="pub-meta">
+                <span class="pill">Journal</span>
+                <a href="https://doi.org/10.1109/LSP.2026.3669434" target="_blank" rel="noopener">DOI</a>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+            <article class="pub" data-type="journal" data-status="review" data-note="Under review at Applied Soft Computing" data-key="sen2026learned" data-title="Learned Deep Networks for Nonnegative Sparse Signal Recovery: Analysis and Application to Electrical Impedance Tomography" data-year="2026" data-authors="Sen, Akash and Gulati, S. and Jampana, P. and Sastry, C. S.">
+              <div class="pub-title">Learned Deep Networks for Nonnegative Sparse Signal Recovery: Analysis and Application to Electrical Impedance Tomography</div>
+              <div class="pub-authors"><b>Akash Sen</b>, S. Gulati, P. Jampana, C. S. Sastry</div>
+              <div class="pub-venue"><em>Applied Soft Computing</em>, 2026</div>
+              <div class="pub-meta">
+                <span class="pill">Journal</span>
+                <span class="pill warn">Under review</span>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+            <article class="pub" data-type="journal" data-status="review" data-note="Under review at Neural Networks" data-key="sen2026lcpnet" data-title="LCP-Net: A Learned Deep Network for $\ell_{1+1}$ Sparse Signal Recovery Under Impulsive Noise" data-year="2026" data-authors="Sen, Akash and Sastry, C. S.">
+              <div class="pub-title">LCP-Net: A Learned Deep Network for ℓ<sub>1+1</sub> Sparse Signal Recovery Under Impulsive Noise</div>
+              <div class="pub-authors"><b>Akash Sen</b>, C. S. Sastry</div>
+              <div class="pub-venue"><em>Neural Networks</em>, 2026</div>
+              <div class="pub-meta">
+                <span class="pill">Journal</span>
+                <span class="pill warn">Under review</span>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+            <article class="pub" data-type="journal" data-status="prep" data-note="In preparation" data-key="sen2026hard" data-title="A hard thresholding-driven basis pursuit algorithm with momentum under nonnegativity constraint" data-year="2026" data-authors="Sen, Akash and Sastry, C. S.">
+              <div class="pub-title">A hard thresholding-driven basis pursuit algorithm with momentum under nonnegativity constraint</div>
+              <div class="pub-authors"><b>Akash Sen</b>, C. S. Sastry</div>
+              <div class="pub-meta">
+                <span class="pill">Journal</span>
+                <span class="pill warn">In preparation</span>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+            <article class="pub" data-type="journal" data-status="prep" data-note="In preparation" data-key="sen2026bgst" data-title="BGST: A Convex Solver for Group Sparse Signal Recovery with a Box Constraint" data-year="2026" data-authors="Sen, Akash and Sastry, C. S.">
+              <div class="pub-title">BGST: A Convex Solver for Group Sparse Signal Recovery with a Box Constraint</div>
+              <div class="pub-authors"><b>Akash Sen</b>, C. S. Sastry</div>
+              <div class="pub-meta">
+                <span class="pill">Journal</span>
+                <span class="pill warn">In preparation</span>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="entry" data-year-group>
+          <div class="when">2025</div>
+          <div class="entry-list">
+            <article class="pub" data-type="conference" data-status="published" data-key="sen2025relu" data-title="Learned ReLU-Based Soft Thresholding: A Data-Driven Method for Non-Negative Sparse Signal Recovery" data-venue="IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)" data-place="Hyderabad, India" data-year="2025" data-pages="1--5" data-doi="10.1109/ICASSP49660.2025.10887620" data-authors="Sen, Akash and Pradhan, P. and Randhi, R. and Sastry, C. S.">
+              <div class="pub-title">Learned ReLU-Based Soft Thresholding: A Data-Driven Method for Non-Negative Sparse Signal Recovery</div>
+              <div class="pub-authors"><b>Akash Sen</b>, P. Pradhan, R. Randhi, C. S. Sastry</div>
+              <div class="pub-venue"><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, Hyderabad, India, 2025, pp. 1–5</div>
+              <div class="pub-meta">
+                <span class="pill">Conference</span>
+                <a href="https://doi.org/10.1109/ICASSP49660.2025.10887620" target="_blank" rel="noopener">DOI</a>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+            <article class="pub" data-type="conference" data-status="published" data-key="sen2025sampta" data-title="Learned Over-Parametrized Gradient Descent Method for Non-Negative Least Squares Problem" data-venue="International Conference on Sampling Theory and Applications (SampTA)" data-place="Vienna, Austria" data-year="2025" data-pages="1--4" data-doi="10.1109/SampTA64769.2025.11133521" data-authors="Sen, Akash and Sastry, C. S.">
+              <div class="pub-title">Learned Over-Parametrized Gradient Descent Method for Non-Negative Least Squares Problem</div>
+              <div class="pub-authors"><b>Akash Sen</b>, C. S. Sastry</div>
+              <div class="pub-venue"><em>International Conference on Sampling Theory and Applications (SampTA)</em>, Vienna, Austria, 2025, pp. 1–4</div>
+              <div class="pub-meta">
+                <span class="pill">Conference</span>
+                <a href="https://doi.org/10.1109/SampTA64769.2025.11133521" target="_blank" rel="noopener">DOI</a>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+            <article class="pub" data-type="conference" data-status="published" data-key="sen2025premi" data-title="A Hard Thresholding-Based Deep Unrolled Network for Nonnegative Sparse Inverse Problems" data-venue="11th International Conference on Pattern Recognition and Machine Intelligence (PReMI)" data-place="IIT Delhi, India" data-year="2025" data-authors="Sen, Akash and Sastry, C. S.">
+              <div class="pub-title">A Hard Thresholding-Based Deep Unrolled Network for Nonnegative Sparse Inverse Problems</div>
+              <div class="pub-authors"><b>Akash Sen</b>, C. S. Sastry</div>
+              <div class="pub-venue"><em>11th International Conference on Pattern Recognition and Machine Intelligence (PReMI)</em>, IIT Delhi, India, 2025</div>
+              <div class="pub-meta">
+                <span class="pill">Conference</span>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="entry" data-year-group>
+          <div class="when">2024</div>
+          <div class="entry-list">
+            <article class="pub" data-type="conference" data-status="published" data-key="sen2024unrolled" data-title="Unrolled Proximal Gradient Descent Method for Non-Negative Least Squares Problem" data-venue="IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)" data-place="Seoul, Korea" data-year="2024" data-pages="7625--7629" data-doi="10.1109/ICASSP48485.2024.10447946" data-authors="Sen, Akash and Pradhan, P. and Randhi, R. and Sastry, C. S.">
+              <div class="pub-title">Unrolled Proximal Gradient Descent Method for Non-Negative Least Squares Problem</div>
+              <div class="pub-authors"><b>Akash Sen</b>, P. Pradhan, R. Randhi, C. S. Sastry</div>
+              <div class="pub-venue"><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, Seoul, Korea, 2024, pp. 7625–7629</div>
+              <div class="pub-meta">
+                <span class="pill">Conference</span>
+                <a href="https://doi.org/10.1109/ICASSP48485.2024.10447946" target="_blank" rel="noopener">DOI</a>
+                <button class="linkbtn" type="button" data-bib>Copy BibTeX</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <p class="item-sub" id="pub-empty" hidden>Nothing in this category yet.</p>
+    </section>
+
+    <section id="conferences">
+      <h2>Conferences</h2>
+      <div class="entry">
+        <div class="when">Dec 2025</div>
+        <div>
+          <div class="item-title">11th International Conference on Pattern Recognition and Machine Intelligence (PReMI)</div>
+          <div class="item-sub">IIT Delhi, India · 11–14 December · Presented</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Jul 2025</div>
+        <div>
+          <div class="item-title">Sampling Theory and Applications (SampTA)</div>
+          <div class="item-sub">Vienna, Austria · 28 July – 1 August · Presented</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Apr 2025</div>
+        <div>
+          <div class="item-title">50th IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</div>
+          <div class="item-sub">Hyderabad, India · 6–11 April · Presented</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Mar 2025</div>
+        <div>
+          <div class="item-title">3rd International Conference on Recent Advances in Applied Mathematics (RAAM)</div>
+          <div class="item-sub">Colombo, Sri Lanka · 4–6 March · Participated</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Jul 2024</div>
+        <div>
+          <div class="item-title">2nd International Conference on Recent Advances in Applied Mathematics (RAAM)</div>
+          <div class="item-sub">IIT BHU, Varanasi, India · 3–5 July · Participated</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Apr 2024</div>
+        <div>
+          <div class="item-title">49th IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</div>
+          <div class="item-sub">Seoul, South Korea · 14–19 April · Presented</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <div class="entry">
+        <div class="when">Jul 2024 – Mar 2026</div>
+        <div>
+          <div class="item-title">Group Theory, Ring Theory, Real Analysis, Computational Linear Algebra</div>
+          <div class="item-sub">Taught B.Sc second- and third-year PMCS (Mathematics, Physics, Computer Science) students at Masters Degree &amp; PG College, Sangareddy, Hyderabad, as a Prime Minister's Research Fellow.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2024</div>
+        <div>
+          <div class="item-title">Machine Learning</div>
+          <div class="item-sub">Taught third-year B.Tech Cyber Security students at Hyderabad Institute of Technology and Management, as a Prime Minister's Research Fellow.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">IIT Hyderabad</div>
+        <div>
+          <div class="item-title">Teaching assistant</div>
+          <div class="item-sub">Applied Statistics, Mathematics Behind Machine Learning, Transform Techniques, Calculus, Complex Variables, Numerical Linear Algebra, Ordinary Differential Equations, Introduction to Probability and Statistics.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards</h2>
+      <div class="entry">
+        <div class="when">Cycle 11</div>
+        <div>
+          <div class="item-title">Prime Minister's Research Fellowship (PMRF)</div>
+          <div class="item-sub">Selected for the fellowship in Cycle 11.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2023</div>
+        <div>
+          <div class="item-title">CSIR NET, Mathematical Sciences</div>
+          <div class="item-sub">Qualified in the Dec 2022 / June 2023 cycle, All India Rank 82.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2022</div>
+        <div>
+          <div class="item-title">GATE, Mathematics</div>
+          <div class="item-sub">All India Rank 371.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2020</div>
+        <div>
+          <div class="item-title">IIT-JAM, Mathematics</div>
+          <div class="item-sub">All India Rank 215.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2017 – 2022</div>
+        <div>
+          <div class="item-title">DST INSPIRE Scholarship</div>
+          <div class="item-sub">Held through the B.Sc and M.Sc.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="when">2022 – now</div>
+        <div>
+          <div class="item-title">PhD, Applied Mathematics</div>
+          <div class="item-sub">Indian Institute of Technology Hyderabad · Advisor: Prof. C. S. Sastry · CGPA 9.21</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2020 – 2022</div>
+        <div>
+          <div class="item-title">M.Sc, Mathematics &amp; Computing</div>
+          <div class="item-sub">Indian Institute of Technology Hyderabad · CGPA 8.79</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2017 – 2020</div>
+        <div>
+          <div class="item-title">B.Sc (Hons), Mathematics</div>
+          <div class="item-sub">Visva-Bharati University, Santiniketan, West Bengal · CGPA 8.45</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2015 – 2017</div>
+        <div>
+          <div class="item-title">Birbhum Zilla School</div>
+          <div class="item-sub">Class XII: 92% (2017) · Class X: 91.14% (2015)</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Coursework</div>
+        <div>
+          <div class="item-sub">Foundations of Machine Learning, Deep Learning, Convex Optimization, Reinforcement Learning, Deep Generative Models, Functional Analysis, Operator Theory, Differential Geometry, Advanced Analysis, Mathematics Behind Machine Learning.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Skills</div>
+        <div>
+          <div class="item-sub">Python, C++, LaTeX, MATLAB.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <dl class="contact-grid">
+        <dt>Email</dt>
+        <dd><span id="email-text">ma22resch11003@iith.ac.in</span> <button class="linkbtn" type="button" id="copy-email">Copy</button></dd>
+        <dt>Affiliation</dt>
+        <dd>Department of Mathematics, Indian Institute of Technology Hyderabad</dd>
+        <dt>Advisor</dt>
+        <dd>Prof. C. S. Sastry</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <span>Last updated 9 November 2026</span>
+    <span>© 2026 Akash Sen</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  /* ---------- Theme: auto → light → dark ---------- */
+  var modes = ['auto', 'light', 'dark'];
+  var btn = document.getElementById('theme-btn');
+  var mode = 'auto';
+  try { mode = localStorage.getItem('theme-mode') || 'auto'; } catch (e) {}
+  if (modes.indexOf(mode) < 0) mode = 'auto';
+  function applyTheme() {
+    if (mode === 'auto') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', mode);
+    btn.textContent = 'Theme: ' + mode.charAt(0).toUpperCase() + mode.slice(1);
+  }
+  btn.addEventListener('click', function () {
+    mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+    try { localStorage.setItem('theme-mode', mode); } catch (e) {}
+    applyTheme();
+  });
+  applyTheme();
+
+  /* ---------- Copy helper with fallback ---------- */
+  function copyText(text, el, doneLabel) {
+    var original = el.textContent;
+    function done(label) {
+      el.textContent = label;
+      setTimeout(function () { el.textContent = original; }, 1800);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      done(ok ? doneLabel : 'Select and copy manually');
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done(doneLabel); }, fallback);
+    } catch (e) { fallback(); }
+  }
+
+  document.getElementById('copy-email').addEventListener('click', function (e) {
+    copyText(document.getElementById('email-text').textContent, e.currentTarget, 'Copied');
+  });
+
+  /* ---------- BibTeX built from each publication's data ---------- */
+  document.querySelectorAll('.pub [data-bib]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var d = b.closest('.pub').dataset;
+      var published = d.status === 'published';
+      var type = !published ? 'unpublished' : (d.type === 'journal' ? 'article' : 'inproceedings');
+      var lines = ['  author = {' + d.authors + '}', '  title = {' + d.title + '}'];
+      if (published) lines.push('  ' + (d.type === 'journal' ? 'journal' : 'booktitle') + ' = {' + d.venue + '}');
+      if (published && d.place) lines.push('  address = {' + d.place + '}');
+      if (published && d.pages) lines.push('  pages = {' + d.pages + '}');
+      if (!published) lines.push('  note = {' + d.note + '}');
+      lines.push('  year = {' + d.year + '}');
+      if (d.doi) lines.push('  doi = {' + d.doi + '}');
+      copyText('@' + type + '{' + d.key + ',\n' + lines.join(',\n') + '\n}', b, 'Copied');
+    });
+  });
+
+  /* ---------- Publication filter ---------- */
+  var filterBtns = document.querySelectorAll('.filters button');
+  var groups = document.querySelectorAll('[data-year-group]');
+  var empty = document.getElementById('pub-empty');
+  filterBtns.forEach(function (fb) {
+    fb.addEventListener('click', function () {
+      var f = fb.dataset.filter;
+      filterBtns.forEach(function (o) { o.setAttribute('aria-pressed', o === fb ? 'true' : 'false'); });
+      var anyVisible = false;
+      groups.forEach(function (g) {
+        var visible = 0;
+        g.querySelectorAll('.pub').forEach(function (p) {
+          var show = f === 'all' || p.dataset.type === f;
+          p.hidden = !show;
+          if (show) visible++;
+        });
+        g.hidden = visible === 0;
+        if (visible) anyVisible = true;
+      });
+      empty.hidden = anyVisible;
+    });
+  });
+
+  /* ---------- Section index highlight ---------- */
+  var links = {};
+  document.querySelectorAll('.nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  function setCurrent(id) {
+    Object.keys(links).forEach(function (k) {
+      if (k === id) links[k].setAttribute('aria-current', 'true');
+      else links[k].removeAttribute('aria-current');
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting && links[en.target.id]) setCurrent(en.target.id); });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    document.querySelectorAll('main section').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
